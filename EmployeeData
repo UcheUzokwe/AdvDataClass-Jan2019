@@ -1,0 +1,29 @@
+#Define a function to compute weekly wage using 2 variables - hour and wage
+def calcWeeklyWages(totalHours, hourlyWage):  
+	
+	#check is there is an overtime
+	if totalHours > 40:
+		overtime = totalHours - 40
+		regularHours = 40
+	else:
+		overtime = 0
+		regularHours = totalHours
+	
+	#Computes the wage including the overtime pay
+	return hourlyWage*regularHours + (1.5*hourlyWage)*overtime
+
+
+#Define the startup function to get user input and display the result
+def main():
+	name = input('Enter employee name: ')
+	wage = input('Enter dollars paid per hour: ')	
+	hours = input('Enter hours worked: ')
+	
+	#Call the function to compute wage forcing while initializing the variables
+	total = calcWeeklyWages(int(hours), float(wage))
+	
+	#Computes the wage and displays the result in a currency notation using comma and 2 decimal places
+	print ('\n' + name + '\'s' + ' weekly wage is $', format(total,',.2f'))
+
+#Call the startup function
+main()

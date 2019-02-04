@@ -13,4 +13,3 @@ else:
 	pay = wage * 40 + (1.5 * wage) * overtime
 	
 print ('\n' + name + '\'s' + ' weekly wage is $', format(pay,',.2f'))
-
